@@ -1,0 +1,34 @@
+﻿.container {
+    color: #ffffff;
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+h5 {
+    color: #ffffff;
+    font-size: 2em;
+}
+
+.btn {
+    display: inline-block;
+}
+
+.buttons{
+    margin-top: 50px;
+}
+
+.cobertura {
+    display: inline-block;
+    margin-top: 20px;
+    color: burlywood;
+}
+
+.btn-link {
+    color: #ffffff;
+}
+
+.btn-link:hover {
+    color: burlywood;
+}

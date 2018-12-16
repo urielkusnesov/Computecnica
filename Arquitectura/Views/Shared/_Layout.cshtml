@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        <link href=@Url.Content("~/Content/bootstrap.min.css") rel="stylesheet" type="text/css" />
+        <link href=@Url.Content("~/Content/menu.css") rel="stylesheet" type="text/css" />
+        @Styles.Render("~/Content/themes/base/css")
+        @Styles.Render("~/Content/css")
+        <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+        <script src="@Url.Content("~/Scripts/standard.js")"></script>
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p class="site-title"><img src="~/Images/logo.png" class="img-responsive"/></p>
+                </div>
+                <div class="float-right">
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    @Html.ActionLink("011-36756702", "Whatsapp", "Service", null, new { @class = "btn btn-link float-right", id = "whatsapp2 float-right" })
+                    @Html.ActionLink("011-58709193", "Whatsapp", "Service", null, new { @class = "btn btn-link float-right", id = "whatsapp" })
+                    @Html.ActionLink("service@computecnica.com.ar", "Index", "Mail", null, new { @class = "btn btn-link float-right", id = "mail" })
+                </div>
+                <div class="contacts">
+                </div>
+            </div>
+
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

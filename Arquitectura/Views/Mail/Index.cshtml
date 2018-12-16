@@ -1,0 +1,57 @@
+﻿@using Model;
+@model Mail
+
+@{
+    ViewBag.Title = "Contacto";
+    var result = (string)ViewBag.Result;
+}
+
+<link href="@Url.Content("~/Content/List.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/createOrModify.css")" rel="stylesheet" />
+<script src="@Url.Content("~/Scripts/contact.js")"></script>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Contacto</title>
+</head>
+
+<div class="container">
+    <div class="title">Contacto</div>
+</div>
+
+@using (Ajax.BeginForm("Index", null, new AjaxOptions { HttpMethod = "POST" }, new { id = "form", @class = "form-horizontal" }))
+{
+
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <div class="form-group row">
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                @Html.Label("Nombre")
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Name)
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                @Html.Label("Email")
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Email)
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-4">
+                @Html.Label("Detalle su consulta")
+                @Html.TextAreaFor(m => m.Body, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Body)
+            </div>
+        </div>
+        <input type="submit" value="Envíar" class="btn btn-primary float-right" />
+    </fieldset>
+
+    @Html.Hidden("result", result, new { id = "result" })
+    <div id="dialog-confirm" title="Solicitud">
+        <p>La solicitud se envío con éxito</p>
+    </div>
+}

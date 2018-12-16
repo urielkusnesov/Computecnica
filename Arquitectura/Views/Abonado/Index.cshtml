@@ -1,0 +1,33 @@
+﻿@using Model;
+@model IList<Abonado>
+
+@{
+    ViewBag.Title = "Abonados";
+    string username = (string)ViewBag.Username;
+    string token = (string)ViewBag.Token;
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/Gridmvc.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/gridmvc.min.js")"></script>
+    <link href="@Url.Content("~/Content/List.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/list.js")"></script>
+    <title>Index</title>
+</head>
+
+<div class="container">
+    <div class="title">Abonados</div>
+</div>
+
+<div class="container">
+    @Html.ActionLink("Nuevo abonado", "Create", "Abonado", new { @class = "btn btn-light float-right" })
+
+    <div id="gridContainer" data-grid-url="@Url.Action("Index")">
+        @Html.Partial("List", Model)
+    </div>
+</div>
+
+<div id="dialog-confirm" title="Eliminar">
+    <p>Esta seguro?</p>
+</div>

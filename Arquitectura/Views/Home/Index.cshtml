@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Computecnica";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="@Url.Content("~/Content/index.css")" rel="stylesheet" />
+    <script src="@Url.Content("~/Scripts/index.js")"></script>
+    <title>@ViewBag.Title</title>
+</head>
+
+<div class="container">
+    
+    <h5>Servicio Técnico de Computadoras</h5>
+    <div class="center">Atención a empresas, Colegios, Instituciones y particulares</div>
+    <div class="center">Redes -- Instalaciones -- Configuración de Equipos</div>
+    <div class="center">Antivirus -- Optimización -- Reparaciones -- Backup</div>
+    <div class="center">Técnicos a domicilio y atención remota</div>
+    <div class="center">Servicio ocasional y Ábonos</div>
+
+    <div class="cobertura">Cobertura: CABA &emsp; Interior: Cotizar traslados</div>
+
+    <div class="buttons">
+        @Html.ActionLink("Cotizar Abono", "Cotizar", "Abonado", null, new { @class = "btn btn-light", id = "cotizar" })
+        @Html.ActionLink("Solicitar Servicio Técnico Particular", "Particular", "Service", null, new { @class = "btn btn-light", id = "particular" })
+        @Html.ActionLink("Solicitar Servicio Técnico Abonados", "AbonadoService", "Service", null, new { @class = "btn btn-light", id = "abonado" })
+    </div>
+
+    <div class="buttons">
+        <a href="https://play.google.com/store/apps/details?id=geolaxia.computecnica" target="_blank">
+            <img src="@Url.Content("~/images/downloadApp.png")" />
+        </a>
+    </div>
+
+</div>
+
+<div id="dialog-confirm" title="Eliminar">
+    <p>Esta seguro?</p>
+</div>
+
+

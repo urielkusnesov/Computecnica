@@ -1,0 +1,47 @@
+﻿@using Model;
+@model Abonado
+
+<link href="@Url.Content("~/Content/List.css")" rel="stylesheet" />
+<link href="@Url.Content("~/Content/createOrModify.css")" rel="stylesheet" />
+
+@Html.ValidationSummary(true)
+<fieldset>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            @Html.Label("Número")
+            @Html.TextBoxFor(m => m.Number, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Number)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            @Html.Label("Nombre")
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Name)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            @Html.Label("Email")
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Email)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            @Html.Label("Dirección")
+            @Html.TextBoxFor(m => m.Address, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Address)
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="col-sm-4">
+            @Html.Label("Teléfono")
+            @Html.TextBoxFor(m => m.Phone, new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Phone)
+        </div>
+    </div>
+    <input type="submit" value="Guardar" class="btn btn-primary float-right" />
+</fieldset>
+
+

@@ -1,0 +1,27 @@
+﻿@using Model;
+@using GridMvc.Html;
+@model IList<Abonado>
+
+@{
+    Layout = null;
+}
+
+@Html.ValidationSummary(true)
+@Html.Hidden("removeUrl", "Abonado/Remove/", new { id = "removeUrl" })
+
+@Html.Grid(Model).Columns(columns =>
+{
+    columns.Add().Encoded(false).Sanitized(false).RenderValueAs(col =>
+    @<a href="/Abonado/Modify/@col.Id">
+        <span class="ui-icon ui-icon-pencil"></span>
+    </a>).SetWidth(25);
+    columns.Add().Encoded(false).Sanitized(false).RenderValueAs(col =>
+    @<a href="#" class="remove" data-id="@col.Id">
+        <span class="ui-icon ui-icon-trash"></span>
+    </a>).SetWidth(25);
+    columns.Add(col => col.Number).Titled("Número").Filterable(true);
+    columns.Add(col => col.Name).Titled("Nombre").Filterable(true);
+    columns.Add(col => col.Email).Titled("Email").Filterable(true);
+    columns.Add(col => col.Address).Titled("Dirección").Filterable(true);
+    columns.Add(col => col.Phone).Titled("Teléfono").Filterable(true);
+}).WithPaging(10).Filterable(true).Sortable(true)

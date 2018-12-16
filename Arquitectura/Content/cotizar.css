@@ -1,0 +1,9 @@
+﻿input[type='checkbox'] {
+    float: left;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.row label {
+    color: #ffffff;
+}

@@ -1,0 +1,25 @@
+﻿.title {
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.remove {
+    color: #fff !important;
+}
+
+.grid-cell, .grid-header {
+    vertical-align: middle !important;
+    border-left: 1px groove;
+    border-right: 1px groove;
+}
+
+.num-input {
+    width: 100px;
+    text-align: end;
+}
+
+table {
+    background-color: white !important;
+}

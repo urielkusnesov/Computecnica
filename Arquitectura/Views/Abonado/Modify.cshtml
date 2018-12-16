@@ -1,0 +1,20 @@
+﻿@using Model;
+@model Abonado
+
+@{
+    ViewBag.Title = "Modificar abonado";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modificar abonado</title>
+</head>
+
+<div class="container">
+    <div class="title">Modificar abonado</div>
+</div>
+
+@using (Ajax.BeginForm("Modify", null, new AjaxOptions { HttpMethod = "POST" }, new { id = "form", @class = "form-horizontal" }))
+{
+    @Html.Partial("CreateOrModify", Model)
+}
